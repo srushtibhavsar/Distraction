@@ -1,0 +1,50 @@
+[
+  {
+    "timestamp": "2025-04-07T23:09:01.397956",
+    "type": "Dark",
+    "premise": "The closer you get to understanding why people do terrible things, the more horrifyingly normal it seems.",
+    "setup": "I\u2019ve been researching the psychology of arson, and honestly, I\u2019m starting to think my neighbor\u2019s meticulously crafted miniature villages are just\u2026 a very elaborate expression of repressed rage.",
+    "user_punchline": "",
+    "ai_punchlines": [
+      "\u201cTurns out, the meticulous detail \u2013 the tiny little shingles, the perfectly placed miniature gnome \u2013 it\u2019s not about destruction, it\u2019s about control. He's just really, *really* bad at landscaping.\u201d",
+      "\u201cI\u2019m starting to suspect my neighbor\u2019s arsonist tendencies aren\u2019t born of malice, but a profound lack of impulse control\u2026 and a subscription to \u2018Model Railroading Monthly.\u2019\u201d",
+      "\u201cYou know, the thing that\u2019s truly terrifying isn\u2019t the fire, it\u2019s the level of aesthetic appreciation he has for the burn marks. He\u2019s basically a tiny-house enthusiast with a serious anger management problem.\u201d"
+    ]
+  },
+  {
+    "timestamp": "2025-04-07T23:13:05.556785",
+    "type": "Sarcastic",
+    "premise": "People are obsessed with optimizing *everything*, even things that were perfectly fine before.",
+    "setup": "I spent an hour yesterday adjusting the lumbar support on my couch, and now I\u2019m pretty sure it\u2019s actively judging my life choices.",
+    "user_punchline": "",
+    "ai_punchlines": [
+      "\u201cYou know, it\u2019s exhausting being judged by a piece of foam. I'm starting to think my therapist bills are going to be higher than my couch\u2019s lumbar support.\u201d",
+      "\u201cHonestly, I\u2019m pretty sure the couch is silently screaming, \u2018You could have been folding laundry!\u2019\u201d",
+      "\u201cI\u2019ve reached peak anxiety: I\u2019m worried about the *comfort* of my comfort.\u201d"
+    ]
+  },
+  {
+    "timestamp": "2025-04-07T23:21:12.044525",
+    "type": "Deadpan",
+    "premise": "My therapist says I have a preoccupation with the structural integrity of everyday objects.",
+    "setup": "He showed me a particularly concerning wobble in a ceramic coffee mug this morning...",
+    "user_punchline": "",
+    "ai_punchlines": [
+      "\u201cI\u2019m starting to think my concern for the mug\u2019s stability is a preemptive measure against existential collapse.\u201d",
+      "\u201cHe said I needed to address my anxieties. I just told him I\u2019m anticipating a slow-motion domino effect.\u201d",
+      "\u201cThe ceramic was perfectly fine... until I realized I'd been subconsciously building a miniature fortress around my morning coffee.\u201d"
+    ]
+  },
+  {
+    "timestamp": "2025-04-07T23:22:30.759654",
+    "type": "Deadpan",
+    "premise": "The inherent absurdity of human social rituals is often rooted in completely arbitrary rules.",
+    "setup": "I spent an entire afternoon observing a group of people meticulously arranging small, brightly colored stones into a spiral...",
+    "user_punchline": "",
+    "ai_punchlines": [
+      "I just... I don't understand why anyone feels the need to validate their existence with perfectly symmetrical gravel.",
+      "My therapist says it\u2019s a manifestation of repressed anxiety about the inevitable entropy of all things, but I think she's just bored.",
+      "The stones, frankly, looked deeply unhappy. They\u2019d probably have told me to just leave them alone."
+    ]
+  }
+]
