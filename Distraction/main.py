@@ -53,7 +53,6 @@ if "setup" in st.session_state:
     if "ai_punchlines" in st.session_state and st.button("Save This Joke"):
         save_submission(
             comedy_type,
-            st.session_state["premise"],
             st.session_state["setup"],
             user_punchline,
             st.session_state["ai_punchlines"]

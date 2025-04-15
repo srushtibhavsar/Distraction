@@ -18,8 +18,6 @@ Your task is to write 3 punchlines for the setup below — each from a **differe
 
 Instructions:
 - Each punchline should reflect a different character's perspective, such as:
-    - The speaker (first-person)
-    - A parent, friend, stranger, pet, boss, ghost, society, etc.
 - All punchlines should match the tone/style of "{comedy_type}" (e.g., dry, dark, sarcastic, etc.)
 - Keep each punchline short and stage-ready (1-2 sentences max)
 - Make sure the punchlines are **distinct** and not just variations of the same idea
