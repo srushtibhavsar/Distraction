@@ -5,7 +5,7 @@ from helper import generate_punchlines, save_submission
 
 st.set_page_config(page_title="Comedy Coach 🎤", layout="centered")
 
-st.title("🎭 Comedyyy Coach")
+st.title("🎭 Comedy Coach")
 st.subheader("Write punchlines. Learn by laughing.")
 
 comedy_types = [
