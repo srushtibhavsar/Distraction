@@ -8,21 +8,20 @@ from langchain_groq import ChatGroq
 def get_groq_llm(model_name: str, temperature: float = 0.9):
     return ChatGroq(groq_api_key=st.secrets["GROQ_API_KEY"], model_name=model_name, temperature=temperature)
 
-def generate_punchlines(premise, setup, comedy_type, model_info):
+def generate_punchlines(setup, comedy_type, model_info):
     prompt = f"""
 You are a professional stand-up comedy writer who specializes in "{comedy_type}" comedy.
 
 Your task is to write 3 punchlines for the setup below — each from a **different point of view** (POV), but all within the **same comedic style**: "{comedy_type}".
 
-**Premise:** {premise}  
 **Setup:** {setup}
 
 Instructions:
-- Each punchline should reflect a different character’s perspective, such as:
+- Each punchline should reflect a different character's perspective, such as:
     - The speaker (first-person)
     - A parent, friend, stranger, pet, boss, ghost, society, etc.
 - All punchlines should match the tone/style of "{comedy_type}" (e.g., dry, dark, sarcastic, etc.)
-- Keep each punchline short and stage-ready (1–2 sentences max)
+- Keep each punchline short and stage-ready (1-2 sentences max)
 - Make sure the punchlines are **distinct** and not just variations of the same idea
 
 Format your response like this:
@@ -31,8 +30,9 @@ Format your response like this:
 3. [Punchline from POV #3]
 
 Return only the punchlines. No extra explanation.
-Also can you answwer it in casual Hinglish please.
+Also can you answer it in casual Hinglish please.
 
+Sample Example: Do not taje it as it is.
 "Premise:
 Ek banda hamesha late aata hai office mein.
 
@@ -67,11 +67,10 @@ Banda bola — "Sir, meri ghadi motivation quotes dikhati hai, time nahi!"
     except Exception as e:
         return [f"Error: {str(e)}"]
 
-def save_submission(comedy_type, premise, setup, user_punchline, ai_punchlines, file_path="data/submissions.json"):
+def save_submission(comedy_type, setup, user_punchline, ai_punchlines, file_path="data/submissions.json"):
     entry = {
         "timestamp": datetime.now().isoformat(),
         "type": comedy_type,
-        "premise": premise,
         "setup": setup,
         "user_punchline": user_punchline,
         "ai_punchlines": ai_punchlines

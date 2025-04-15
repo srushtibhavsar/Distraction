@@ -28,21 +28,19 @@ if "GROQ_API_KEY" not in st.secrets:
     st.error("Missing GROQ_API_KEY in Streamlit secrets. Please set it in Settings → Secrets.")
     st.stop()
 
-if st.button("Get Premise & Setup"):
-    premise, setup = generate_premise_and_setup(comedy_type, model_info)
-    st.session_state["premise"] = premise
+if st.button("Get Setup"):
+    setup = generate_premise_and_setup(comedy_type, model_info)
     st.session_state["setup"] = setup
     st.session_state["model_info"] = model_info
 
 if "setup" in st.session_state:
-    st.markdown(f"**Premise:** {st.session_state['premise']}")
+    
     st.markdown(f"**Setup:** {st.session_state['setup']}")
 
     user_punchline = st.text_input("Your punchline:")
 
     if st.button("See 3 sample punchlines"):
         ai_punchlines = generate_punchlines(
-            st.session_state["premise"],
             st.session_state["setup"],
             comedy_type,
             st.session_state["model_info"]
