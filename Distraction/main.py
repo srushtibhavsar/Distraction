@@ -13,7 +13,7 @@ comedy_types = [
 ]
 
 model_options = {
-    "GROQ (Mixtral)": {"provider": "groq", "model": "mixtral-8x7b-32768"},
+    "GROQ (gemma)": {"provider": "groq", "model": "gemma2-9b-it"},
     "GROQ (LLaMA3)": {"provider": "groq", "model": "llama3-8b-8192"}
 }
 
