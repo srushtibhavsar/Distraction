@@ -58,5 +58,17 @@
       "As your friend, I'm concerned you're using the tie with last week's Chinese food as a metaphor for your entire life: a little stale and smelling like disappointment.",
       "To be honest, society's probably relieved you're spending an hour deciding between two ties \u2013 it's the first time in months you haven't spent an hour deciding between two equally terrible Netflix shows."
     ]
+  },
+  {
+    "timestamp": "2025-04-15T21:27:17.289820",
+    "type": "Dark",
+    "premise": "I've finally figured out what's wrong with the healthcare system.",
+    "setup": "It's not the cost, it's the fact that they don't offer a \"package deal\" for dying.",
+    "user_punchline": "gi",
+    "ai_punchlines": [
+      "I mean, think about it, a \"Hospice Plus\" package.  Two nurses, unlimited morphine, a pre-paid cremation.  Gotta make it convenient, right?",
+      "Oh, honey, you're only thinking up the first part of the package deal... you need the service where they come and clean up the mess afterwards.",
+      "(whispering) You're catching on. It's all part of the master plan. We need to make dying predictable."
+    ]
   }
 ]
