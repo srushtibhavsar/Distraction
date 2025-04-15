@@ -14,7 +14,6 @@ if os.path.exists(file_path):
 
     for entry in reversed(data):
         with st.expander(f"{entry['timestamp']} - {entry['type']} Comedy"):
-            st.markdown(f"**Premise:** {entry['premise']}")
             st.markdown(f"**Setup:** {entry['setup']}")
             st.markdown(f"**User Punchline:** {entry['user_punchline']}")
             st.markdown("**AI Punchlines:**")
