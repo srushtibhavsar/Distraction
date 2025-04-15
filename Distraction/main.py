@@ -4,6 +4,10 @@ from helper import generate_punchlines, save_submission
 
 st.set_page_config(page_title="Comedy Coach 🎤", layout="centered")
 
+if "GROQ_API_KEY" not in st.secrets:
+    st.error("Missing GROQ_API_KEY in Streamlit secrets. Please add it under Settings → Secrets.")
+    st.stop()
+
 st.title("🎭 Comedy Coach")
 st.subheader("Write punchlines. Learn by laughing.")
 

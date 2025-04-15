@@ -1,10 +1,14 @@
+# prompts.py
+import streamlit as st
 import ollama
 from langchain_groq import ChatGroq
-from helper import GROQ_API_KEY
 
-# Set up GROQ LLM clients for streaming
-groq_llm_gemma = ChatGroq(groq_api_key=GROQ_API_KEY, model_name="gemma2-9b-it", temperature=0.8)
-groq_llm_llama = ChatGroq(groq_api_key=GROQ_API_KEY, model_name="llama3-8b-8192", temperature=0.8)
+def get_groq_llm(model_name: str, temperature: float = 0.8):
+    return ChatGroq(
+        groq_api_key=st.secrets["GROQ_API_KEY"],
+        model_name=model_name,
+        temperature=temperature
+    )
 
 def generate_premise_and_setup(comedy_type: str, model_info: dict):
     prompt = f"""
@@ -23,7 +27,7 @@ Setup: <your setup>
 """
 
     if model_info["provider"] == "groq":
-        llm = groq_llm_gemma if model_info["model"] == "mixtral-8x7b-32768" else groq_llm_llama
+        llm = get_groq_llm(model_info["model"])
         stream = llm.stream([{"role": "user", "content": prompt}])
         content = "".join(chunk.content for chunk in stream)
     else:

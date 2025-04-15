@@ -1,13 +1,12 @@
 import json
 import os
 from datetime import datetime
+import streamlit as st
 import ollama
 from langchain_groq import ChatGroq
 
-GROQ_API_KEY = "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"
-
-groq_llm_mixtral = ChatGroq(groq_api_key=GROQ_API_KEY, model_name="mixtral-8x7b-32768", temperature=0.9)
-groq_llm_llama = ChatGroq(groq_api_key=GROQ_API_KEY, model_name="llama3-8b-8192", temperature=0.9)
+def get_groq_llm(model_name: str, temperature: float = 0.9):
+    return ChatGroq(groq_api_key=st.secrets["GROQ_API_KEY"], model_name=model_name, temperature=temperature)
 
 def generate_punchlines(premise, setup, comedy_type, model_info):
     prompt = f"""
@@ -36,7 +35,7 @@ Return only the punchlines. No extra explanation.
 
     try:
         if model_info["provider"] == "groq":
-            llm = groq_llm_mixtral if model_info["model"] == "mixtral-8x7b-32768" else groq_llm_llama
+            llm = get_groq_llm(model_info["model"])
             stream = llm.stream([{"role": "user", "content": prompt}])
             content = "".join(chunk.content for chunk in stream)
         else:
