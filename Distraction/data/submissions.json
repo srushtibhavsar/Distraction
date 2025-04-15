@@ -46,5 +46,17 @@
       "My therapist says it\u2019s a manifestation of repressed anxiety about the inevitable entropy of all things, but I think she's just bored.",
       "The stones, frankly, looked deeply unhappy. They\u2019d probably have told me to just leave them alone."
     ]
+  },
+  {
+    "timestamp": "2025-04-15T20:12:25.663712",
+    "type": "Self-deprecating",
+    "premise": "I've always struggled with self-acceptance.",
+    "setup": "I recently spent an entire hour deliberating whether to wear a tie with a stain or a tie with a faint scent of last week's Chinese food.",
+    "user_punchline": "",
+    "ai_punchlines": [
+      "I'm starting to think I'm not just indecisive, I'm actually allergic to making a decision... and also getting a new tie.",
+      "As your friend, I'm concerned you're using the tie with last week's Chinese food as a metaphor for your entire life: a little stale and smelling like disappointment.",
+      "To be honest, society's probably relieved you're spending an hour deciding between two ties \u2013 it's the first time in months you haven't spent an hour deciding between two equally terrible Netflix shows."
+    ]
   }
 ]

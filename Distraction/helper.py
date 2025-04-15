@@ -2,36 +2,14 @@ import json
 import os
 from datetime import datetime
 import ollama
+from langchain_groq import ChatGroq
 
-# Generate with Ollama
-def generate_punchlines(premise, setup, comedy_type):
-#     prompt = f"""
-# You are a professional stand-up comedy writer, and your style is "{comedy_type}" comedy.
+GROQ_API_KEY = "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"
 
-# Based on the following premise and setup, write **three different punchlines**, each taking a **different direction or comedic angle** — but all still in the tone of "{comedy_type}" comedy.
+groq_llm_mixtral = ChatGroq(groq_api_key=GROQ_API_KEY, model_name="mixtral-8x7b-32768", temperature=0.9)
+groq_llm_llama = ChatGroq(groq_api_key=GROQ_API_KEY, model_name="llama3-8b-8192", temperature=0.9)
 
-# **Premise:** {premise}  
-# **Setup:** {setup}
-
-# Requirements:
-# - All 3 punchlines must match the selected comedy style: {comedy_type}
-# - Each punchline should explore a **different approach**, such as:
-#     - Literal or observational
-#     - Sarcastic or ironic
-#     - Absurd or exaggerated
-#     - Wordplay or clever twist
-#     - Dark interpretation (if comedy type is dark), etc.
-# - Punchlines should be short (1–2 sentences max), punchy, and stage-ready.
-# - Avoid repeating logic — each one should feel fresh and unique.
-
-# Format your response like this:
-# 1. First punchline
-# 2. Second punchline
-# 3. Third punchline
-
-# Return only the punchlines — no extra explanation.
-# """
-
+def generate_punchlines(premise, setup, comedy_type, model_info):
     prompt = f"""
 You are a professional stand-up comedy writer who specializes in "{comedy_type}" comedy.
 
@@ -57,27 +35,29 @@ Return only the punchlines. No extra explanation.
 """
 
     try:
-        response = ollama.chat(
-            model="gemma3:4b",  # e.g., "mistral", "phi", etc.
-            messages=[{"role": "user", "content": prompt}]
-        )
+        if model_info["provider"] == "groq":
+            llm = groq_llm_mixtral if model_info["model"] == "mixtral-8x7b-32768" else groq_llm_llama
+            stream = llm.stream([{"role": "user", "content": prompt}])
+            content = "".join(chunk.content for chunk in stream)
+        else:
+            result = ollama.chat(
+                model=model_info["model"],
+                messages=[{"role": "user", "content": prompt}]
+            )
+            content = result["message"]["content"]
 
-        content = response['message']['content'].strip()
         lines = [line.strip() for line in content.split("\n") if line.strip()]
-        
-        # Clean up and only keep numbered lines
         punchlines = []
         for line in lines:
             if line[0].isdigit() and "." in line:
                 _, punch = line.split(".", 1)
                 punchlines.append(punch.strip())
 
-        return punchlines[:3]  # Return max 3 clean lines
+        return punchlines[:3]
 
     except Exception as e:
-        return [f"Error generating punchlines: {str(e)}"]
+        return [f"Error: {str(e)}"]
 
-# Save to JSON
 def save_submission(comedy_type, premise, setup, user_punchline, ai_punchlines, file_path="data/submissions.json"):
     entry = {
         "timestamp": datetime.now().isoformat(),
