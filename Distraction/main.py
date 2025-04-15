@@ -15,7 +15,8 @@ comedy_types = [
 
 model_options = {
     "GROQ (Gemma2 9B IT)": {"provider": "groq", "model": "gemma2-9b-it"},
-    "GROQ (LLaMA3)": {"provider": "groq", "model": "llama3-8b-8192"}
+    "GROQ (LLaMA3)": {"provider": "groq", "model": "llama3-8b-8192"},
+    "GROQ (deepseek)": {"provider": "groq", "model": "deepseek-r1-distill-llama-70b"}
 }
 
 selected_model = st.selectbox("Choose your model:", list(model_options.keys()))

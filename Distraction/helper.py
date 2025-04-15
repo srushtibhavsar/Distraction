@@ -31,6 +31,16 @@ Format your response like this:
 3. [Punchline from POV #3]
 
 Return only the punchlines. No extra explanation.
+Also can you answwer it in casual Hinglish please.
+
+"Premise:
+Ek banda hamesha late aata hai office mein.
+
+Setup:
+Boss ne gusse mein poocha — "Roz late kyun aata hai be?!"
+
+Punchline:
+Banda bola — "Sir, meri ghadi motivation quotes dikhati hai, time nahi!"
 """
 
     try:

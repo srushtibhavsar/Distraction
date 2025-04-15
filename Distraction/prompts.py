@@ -24,6 +24,8 @@ Create one original joke **premise** and **setup** in this comedy style.
 Output format:
 Premise: <your premise>
 Setup: <your setup>
+
+Also can you answwer it in casual Hinglish please.
 """
 
     if model_info["provider"] == "groq":
