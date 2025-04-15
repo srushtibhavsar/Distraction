@@ -4,7 +4,7 @@ from datetime import datetime
 import ollama
 from langchain_groq import ChatGroq
 
-GROQ_API_KEY = "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"
+GROQ_API_KEY = "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"
 
 groq_llm_mixtral = ChatGroq(groq_api_key=GROQ_API_KEY, model_name="mixtral-8x7b-32768", temperature=0.9)
 groq_llm_llama = ChatGroq(groq_api_key=GROQ_API_KEY, model_name="llama3-8b-8192", temperature=0.9)
